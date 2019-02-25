@@ -6,6 +6,9 @@ MAINTAINER https://fairen.github.io
 RUN apt-get update
 RUN apt-get install -y git zsh
 
+# Installing node version manager
+RUN wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+
 # Install fasd
 RUN \
   git clone https://github.com/clvv/fasd.git /usr/local/fasd &&\ 
