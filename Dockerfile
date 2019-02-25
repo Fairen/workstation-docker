@@ -15,7 +15,7 @@ RUN \
 ENV ZSH ${HOME}/.oh-my-zsh
 RUN git clone git://github.com/robbyrussell/oh-my-zsh.git ${HOME}/.oh-my-zsh
 ADD home/ ${HOME}/
-RUN sudo chown -R ${uid}:${gid} ${HOME}
+RUN chown -R ${uid}:${gid} ${HOME}
 
 # Creating directory
 RUN mkdir -p /home/workstation/Projects
