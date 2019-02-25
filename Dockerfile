@@ -20,6 +20,12 @@ RUN git clone git://github.com/robbyrussell/oh-my-zsh.git ${HOME}/.oh-my-zsh
 ADD home/ ${HOME}/
 RUN chown -R ${uid}:${gid} ${HOME}
 
+# Installing tig
+RUN git clone git://github.com/jonas/tig.git ${HOME}/.tig
+RUN cd ${HOME}/.tig
+RUN make
+RUN make install
+
 # Creating directory
 RUN mkdir -p /home/workstation/Projects
 RUN mkdir -p /home/workstation/Softwares
