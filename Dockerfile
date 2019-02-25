@@ -3,6 +3,7 @@ FROM node:11
 MAINTAINER https://fairen.github.io
 
 # Installing add-apt-repository 
+RUN apt-get update
 RUN apt-get install software-properties-common
 
 # Installing Fasd
