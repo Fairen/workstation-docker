@@ -22,7 +22,7 @@ RUN chown -R ${uid}:${gid} ${HOME}
 
 # Installing tig
 RUN git clone git://github.com/jonas/tig.git ${HOME}/.tig
-RUN cd ${HOME}/.tig
+WORKDIR ${HOME}/.tig
 RUN make
 RUN make install
 
