@@ -7,9 +7,9 @@ RUN apt-get update
 RUN apt-get install -y software-properties-common
 
 # Installing Fasd
-RUN add-apt-repository ppa:aacebedo/fasd
-RUN apt-get update
-RUN apt-get install -y fasd
+# RUN add-apt-repository ppa:aacebedo/fasd
+# RUN apt-get update
+# RUN apt-get install -y fasd
 
 # Installing Oh My ZSH
 RUN sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
