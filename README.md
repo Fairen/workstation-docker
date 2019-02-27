@@ -32,7 +32,7 @@ Based on `fair3n/workstation:latest` plus :
 * Wget
 * Nvm
 
-## Node
+## Java
 
 > fair3n/workstation-docker:java
 
