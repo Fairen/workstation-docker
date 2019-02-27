@@ -6,7 +6,7 @@ MAINTAINER https://fairen.github.io
 # Installing dependencies for java 8
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y  software-properties-common && \
+    apt-get install -y unzip software-properties-common && \
     add-apt-repository ppa:webupd8team/java -y && \
     apt-get update && \
     echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
