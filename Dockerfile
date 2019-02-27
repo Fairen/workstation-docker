@@ -1,13 +1,11 @@
-FROM node:11
+# From LTS
+FROM ubuntu:18.04
 
 MAINTAINER https://fairen.github.io
 
 # Installing dependencies
 RUN apt-get update
 RUN apt-get install -y git zsh
-
-# Installing node version manager
-RUN wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 
 # Install fasd
 RUN \
@@ -22,7 +20,6 @@ RUN chown -R ${uid}:${gid} ${HOME}
 
 # Creating directory
 RUN mkdir -p /home/workstation/Projects
-RUN mkdir -p /home/workstation/Softwares
 
 # Define default command.
 CMD ["zsh"]
