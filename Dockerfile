@@ -1,25 +1,17 @@
-# From LTS
-FROM ubuntu:18.04
+# From Standard workstation
+FROM fair3n/workstation:latest
 
 MAINTAINER https://fairen.github.io
 
-# Installing dependencies
-RUN apt-get update
-RUN apt-get install -y git zsh
-
-# Install fasd
-RUN \
-  git clone https://github.com/clvv/fasd.git /usr/local/fasd &&\ 
-  ln -s /usr/local/fasd/fasd /usr/bin/fasd
-
-# Installing Oh My ZSH
-ENV ZSH ${HOME}/.oh-my-zsh
-RUN git clone git://github.com/robbyrussell/oh-my-zsh.git ${HOME}/.oh-my-zsh
-ADD home/ ${HOME}/
-RUN chown -R ${uid}:${gid} ${HOME}
-
-# Creating directory
-RUN mkdir -p /home/workstation/Projects
+# Installing dependencies for java 8
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y  software-properties-common && \
+    add-apt-repository ppa:webupd8team/java -y && \
+    apt-get update && \
+    echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
+    apt-get install -y oracle-java8-installer && \
+    apt-get clean
 
 # Define default command.
 CMD ["zsh"]
