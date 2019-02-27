@@ -28,14 +28,14 @@ docker run -v <host_project_folder>:/home/workstation/Projects -it fair3n/workst
 
 > fair3n/workstation-docker:node
 
-Based on `fair3n/workstation-docker:latest` plus : 
-* wget
-* nvm
+Based on `fair3n/workstation:latest` plus : 
+* Wget
+* Nvm
 
 ## Node
 
 > fair3n/workstation-docker:java
 
-Based on `fair3n/workstation-docker:latest` plus : 
-* java8
+Based on `fair3n/workstation:latest` plus : 
+* Java8
 * Graddle
