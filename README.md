@@ -1,8 +1,6 @@
-# Workstation's Docker
+# Workstation
 
-[![dockeri.co](https://dockeri.co/image/fair3n/workstation)](https://hub.docker.com/r/fair3n/workstation)
-
-> Basic docker workstation 
+[![dockeri.co](https://dockeri.co/image/fair3n/workstation)](https://hub.docker.com/r/fair3n/workstation) 
 
 ## Content
 
@@ -24,13 +22,13 @@ docker pull fair3n/workstation-docker:latest
 docker run -v <host_project_folder>:/home/workstation/Projects -it fair3n/workstation:latest
 ```
 
-# Others Dockers : 
+# Others Workstations : 
 
 ## Node
 
 > fair3n/workstation-docker:node
 
-Based on `fair3n/workstation-docker:latest` with : 
+Based on `fair3n/workstation-docker:latest` plus : 
 * wget
 * nvm
 
@@ -38,6 +36,6 @@ Based on `fair3n/workstation-docker:latest` with :
 
 > fair3n/workstation-docker:java
 
-Based on `fair3n/workstation-docker:latest` with : 
+Based on `fair3n/workstation-docker:latest` plus : 
 * java8
 * Graddle
