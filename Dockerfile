@@ -1,25 +1,10 @@
 # From LTS
-FROM ubuntu:18.04
+FROM fair3n/workstation:latest
 
 MAINTAINER https://fairen.github.io
 
-# Installing dependencies
-RUN apt-get update
-RUN apt-get install -y git zsh
-
-# Install fasd
-RUN \
-  git clone https://github.com/clvv/fasd.git /usr/local/fasd &&\ 
-  ln -s /usr/local/fasd/fasd /usr/bin/fasd
-
-# Installing Oh My ZSH
-ENV ZSH ${HOME}/.oh-my-zsh
-RUN git clone git://github.com/robbyrussell/oh-my-zsh.git ${HOME}/.oh-my-zsh
-ADD home/ ${HOME}/
-RUN chown -R ${uid}:${gid} ${HOME}
-
-# Creating directory
-RUN mkdir -p /home/workstation/Projects
+# Installing node version manager
+RUN wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | zsh
 
 # Define default command.
 CMD ["zsh"]
