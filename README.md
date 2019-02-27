@@ -1,12 +1,12 @@
 # Workstation's Docker
 
-This docker is for Nodejs development. 
+[![dockeri.co](https://dockeri.co/image/fair3n/workstation)](https://hub.docker.com/r/fair3n/workstation)
 
+> Basic docker workstation 
 
 ## Content
 
-* NodeJs (v 11)
-* Nvm
+* Zsh
 * Git
 * Fasd
 * Oh My Zsh
@@ -15,7 +15,6 @@ This docker is for Nodejs development.
 
 ```
 /home/workstation/Projects/
-/home/workstation/Softwares/
 ```
 
 ## How to use 
@@ -24,3 +23,21 @@ This docker is for Nodejs development.
 docker pull fair3n/workstation-docker:latest
 docker run -v <host_project_folder>:/home/workstation/Projects -it fair3n/workstation:latest
 ```
+
+# Others Dockers : 
+
+## Node
+
+> fair3n/workstation-docker:node
+
+Based on `fair3n/workstation-docker:latest` with : 
+* wget
+* nvm
+
+## Node
+
+> fair3n/workstation-docker:java
+
+Based on `fair3n/workstation-docker:latest` with : 
+* java8
+* Graddle
