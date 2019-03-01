@@ -5,7 +5,13 @@ MAINTAINER https://fairen.github.io
 
 # Installing dependencies
 RUN apt-get update
-RUN apt-get install -y git zsh
+RUN apt-get install -y git zsh 
+
+# Install Tig
+RUN git clone https://github.com/jonas/tig.git ${HOME}/tig &&\ 
+  cd ${HOME}/tig &&\ 
+  make &&\ 
+  make install
 
 # Install fasd
 RUN \
