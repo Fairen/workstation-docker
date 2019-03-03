@@ -4,8 +4,23 @@ FROM ubuntu:18.04
 MAINTAINER https://fairen.github.io
 
 # Installing dependencies
+# Git
+# Zsh
+# Build-essential (make, gcc ..)
+# Automake
+# pkg-config
+# libncurses5-dev libncursesw5-dev
 RUN apt-get update
-RUN apt-get install -y git zsh
+RUN apt-get install -y git zsh build-essential automake pkg-config libncurses5-dev libncursesw5-dev
+
+# Install Tig
+RUN git clone https://github.com/jonas/tig.git ${HOME}/tig &&\ 
+  cd ${HOME}/tig &&\ 
+  make clean &&\
+  make configure &&\
+  ./configure &&\
+  make &&\ 
+  make install
 
 # Install fasd
 RUN \
