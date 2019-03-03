@@ -13,11 +13,11 @@ RUN apt-get install -y git zsh build-essential
 # Install Tig
 RUN git clone https://github.com/jonas/tig.git ${HOME}/tig &&\ 
   cd ${HOME}/tig &&\ 
-  make clean\
-  make configure\
-  ./configure\
+  make clean &&\
+  make configure &&\
+  ./configure &&\
   make &&\ 
-  make install\
+  make install &&\
   ./tig
 
 # Install fasd
