@@ -7,6 +7,9 @@ MAINTAINER https://fairen.github.io
 # Git
 # Zsh
 # Build-essential (make, gcc ..)
+# Automake
+# pkg-config
+# libncurses5-dev libncursesw5-dev
 RUN apt-get update
 RUN apt-get install -y git zsh build-essential automake pkg-config libncurses5-dev libncursesw5-dev
 
@@ -17,8 +20,7 @@ RUN git clone https://github.com/jonas/tig.git ${HOME}/tig &&\
   make configure &&\
   ./configure &&\
   make &&\ 
-  make install &&\
-  ./tig
+  make install
 
 # Install fasd
 RUN \
