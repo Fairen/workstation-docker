@@ -8,7 +8,7 @@ MAINTAINER https://fairen.github.io
 # Zsh
 # Build-essential (make, gcc ..)
 RUN apt-get update
-RUN apt-get install -y git zsh build-essential automake pkg-config
+RUN apt-get install -y git zsh build-essential automake pkg-config libncurses5-dev libncursesw5-dev
 
 # Install Tig
 RUN git clone https://github.com/jonas/tig.git ${HOME}/tig &&\ 
